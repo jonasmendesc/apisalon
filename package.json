@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jonasmendesc/apisalon/issues"
   },
-  "homepage": "https://github.com/jonasmendesc/apisalon#readme"
+  "homepage": "https://github.com/jonasmendesc/apisalon#readme",
+  "devDependencies": {
+    "typescript": "2.5.3"
+  }
 }
