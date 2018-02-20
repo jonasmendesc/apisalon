@@ -24,7 +24,7 @@ export interface CompanyModel extends BaseModelInterface, Sequelize.Model<Compan
 export default (sequelize: Sequelize.Sequelize, datatypes: Sequelize.DataTypes) : CompanyModel => {
   const company : CompanyModel = sequelize.define('Company', {
       id: {
-        type: datatypes.UUID,
+        type: datatypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true

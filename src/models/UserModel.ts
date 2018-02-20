@@ -7,6 +7,7 @@ export interface UserAttributes {
   id?: string;
   name?: string;
   email?: string;
+  photo?: string;
   password?: string;
   createdAt?: string;
   updatedAt?: string;
@@ -25,7 +26,7 @@ export interface UserModel extends BaseModelInterface, Sequelize.Model<UserInsta
 export default (sequelize: Sequelize.Sequelize, datatypes: Sequelize.DataTypes) : UserModel => {
   const user : UserModel = sequelize.define('User', {
       id: {
-        type: datatypes.UUID,
+        type: datatypes.INTEGER,
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
@@ -44,7 +45,14 @@ export default (sequelize: Sequelize.Sequelize, datatypes: Sequelize.DataTypes) 
         validate:{
           notEmpty: true
         }
-      }
+      },
+      photo: {
+      type: datatypes.BLOB({
+        length: 'long'
+      }),
+      allowNull: true,
+      defaultValue: null
+    }
   },
     {
       tableName: "users",
